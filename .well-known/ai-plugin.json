@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "GitHub Search Repositories",
+  "name_for_model": "github_search_repositories",
+  "description_for_human": "Search repositories on GitHub using ChatGPT",
+  "description_for_model": "Plugin for searching repositories on GitHub",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:3000/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:3000/logo.png",
+  "contact_email": "midudev@gmail.com",
+  "legal_info_url": "https://midu.dev/legal"
+}

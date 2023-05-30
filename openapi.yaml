@@ -1,0 +1,52 @@
+openapi: 3.0.1
+
+info:
+  title: ChatGPT Plugin GitHub Search Repositories API
+  version: 1.0.0
+  description: API Specification for ChatGPT Plugin GitHub Search Repositories API
+
+paths:
+  /search:
+    get:
+      summary: Search GitHub Repositories using a query
+      operationId: searchGitHub
+      tags:
+        - github
+      parameters:
+        - in: query
+          name: q
+          required: true
+          description: Query to search GitHub Repositories
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  repos:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Repository'
+
+components:
+  schemas:
+    Repository:
+      type: object
+      properties:
+        name:
+          type: string
+        stars:
+          type: integer
+        url:
+          type: string
+        description:
+          type: string
+      required:
+        - name
+        - stars
+        - url
+        - description
